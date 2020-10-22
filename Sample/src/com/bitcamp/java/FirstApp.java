@@ -1,5 +1,7 @@
 package com.bitcamp.java; // 패키지
 
+// 자바의 기본적인 코드 형태
+
 public class FirstApp { // 클래스
 	public static void main(String args[]) { // 엔트리 메소드
 		int a = 10;
