@@ -42,7 +42,6 @@ public class BoardMain { // 게시판 구현 메인 클래스
 		
 		// 초기화
 		final int UEXIT = 0; // 상수표현(가시성 보장으로 변수명을 대문자로 표현). 시스템의 설정값
-		
 		int cmd = 0; // 시스템의 입력값(0을 입력하면 어플래케이션을 종료하는 제어문으로 넘어감)
 		
 		// loggin 변수 초기화 할 것
@@ -65,12 +64,11 @@ public class BoardMain { // 게시판 구현 메인 클래스
 				} else {
 					System.out.println("로그인을 하십시오.");
 				}
-				
 				break;
 				
 			case 2: // 하나의 글을 선택해서 상세 보기 화면
 				System.out.println("글번호 : ");
-				int no = kb.nextInt(); kb.nextLine();
+				int no = kb.nextInt();kb.nextLine();
 				//int no = 0;
 				if (0 <= no && no < bseq) { // 사용자의 입력 유효성 검사. 사용자의 잘못된 값 입력을 방지하도록 한다.
 					viewContent(no); // 수정 및 삭제. 함수 인수에 글을 식별 할 수 있는 값을 삽입
@@ -103,9 +101,7 @@ public class BoardMain { // 게시판 구현 메인 클래스
 			default: // case에 해당되는 값이 없을때 작동. 값을 기입하지 않는다.
 				break;
 			}
-			
 		} // end loop
-		
 		// 마무리(해제 혹은 정리)
 		System.out.println("어플리케이션이 종료되었습니다.");
 	} // main end
@@ -122,10 +118,10 @@ public class BoardMain { // 게시판 구현 메인 클래스
 		//"jang".equals(id); // 두 개의 문자열(String)의 값이 동등한지(equals) 비교. (중요)객체와 객체 혹은 클래스와 클래스끼리 비교할때만 사용한다.
 		//id.equals("jang");
 		//id.contains("j"); // 해당 문자열 중 특정 키워드(부분 문자열)가 포함이(contains) 되는지 확인.
-		for(User user : users) {
-			if(user != null) { // (중요)유저의 정보가 null인지 확인
-				if(user.id.equals(id)) { // 데이터타입은 .을 통해 계속 들어갈수록 달라진다.
-					if(user.id.equals(pw)) { // id와 pw가 모두 확인한게 맞을때
+		for(User user : users ) {
+			if( user != null ){ // (중요)유저의 정보가 null인지 확인
+				if( user.id.equals(id) ) { // 데이터타입은 .을 통해 계속 들어갈수록 달라진다.
+					if(user.pw.equals(pw)) { // id와 pw가 모두 확인한게 맞을때
 						// sucesss
 						loggin = true;
 						userName = user.name;
@@ -159,8 +155,8 @@ public class BoardMain { // 게시판 구현 메인 클래스
 		// 가져오기
 		Content content = board[no]; // 출력할 content를(데이터) 가져오기
 		// 출력하기
-		String s = "[" + content.cno + "] " + content.title;
-		s += "\n:" + content.name;
+		String s = "["+content.cno+"] "+content.title;
+		s += "\n:"+content.name;
 		s += "\n" + content.text;
 		
 		System.out.println(s);
@@ -191,7 +187,7 @@ public class BoardMain { // 게시판 구현 메인 클래스
 			System.out.println("등록된 글이 없습니다.");
 			return;
 		}
-		for(int i=0; i<board.length; ++i) {
+		for(int i=0; i<bseq; ++i) {
 			String str = "[" + i + "]\t";
 			str += board[i].title + "\t";
 			str += board[i].name;
