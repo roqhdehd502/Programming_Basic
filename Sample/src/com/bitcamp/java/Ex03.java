@@ -5,7 +5,7 @@ public class Ex03 {
 	public static void main(String[] args) { // 메인 및 호출 함수
 		//doFor01();
 		//doFor02();
-		gugudan(5);
+		gugudan(3);
 	}
 	
 	private static void gugudan(int cols) { // 반복문(구구단)
