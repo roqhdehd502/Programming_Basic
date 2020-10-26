@@ -1,0 +1,56 @@
+package com.bitcamp.java.board;
+
+/**
+ * 게시글 정보를 다루는 기능들 구현한다...
+ * 저장소를 가지고 있다. Content[]
+ * Create Retrieve Update Delete
+ * @author 비트캠프
+ *
+ */
+public class ContentService {
+	private Content[] list;// = null
+	private int bseq;
+	
+	// 생성자 : 반환형은 적지 않음, 클래스명과 동일한 함수명
+	public ContentService() {
+		// 멤버 초기화 : 배열 생성하려면 요소의 자료형, 길이가 있어야 한다...
+		list = new Content[10];
+		bseq = 0;
+	}
+	
+	public Content[] getAll() {
+		if( bseq == 0) {
+			return null;
+		}
+		Content[] result = new Content[bseq];
+		// copy ? value to value ? ref to ref ?
+		for(int i=0; i<bseq; ++i) {
+			result[i] = list[i];
+		}
+		return result;
+	}
+
+	public void save(Content registContent) {
+		if( registContent != null && bseq < list.length ) {
+			list[bseq] = registContent;
+			++bseq;
+		}
+	}
+
+	public int getTotal() {
+		return bseq;// 현재 저장된 게시글의 개수 [번호]
+	}
+
+	public Content getContentByIndex(int no) {
+		return list[no];
+	}
+
+}
+
+
+
+
+
+
+
+

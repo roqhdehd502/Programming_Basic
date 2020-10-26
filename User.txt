@@ -1,0 +1,11 @@
+package com.bitcamp.java.board;
+
+public class User {
+
+    int uid;
+    String name;
+    String id;
+    String pw;
+
+
+}

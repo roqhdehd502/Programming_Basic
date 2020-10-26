@@ -1,0 +1,20 @@
+package com.bitcamp.java.board;
+
+public class Content {
+
+    int cno;
+    String title;
+    String text;
+    String name;
+
+    // 기존에 이미 구현된 함수를 교체(다시 만든다)하는 경우
+    @Override
+    public String toString() {
+	    String s = "Content{ ["+cno+"]";
+	    s += "title: " + title;
+	    s += "text : " + text;
+	    s += "name : " + name + "} \n";
+	    return s;
+    }
+    
+}

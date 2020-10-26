@@ -1,0 +1,47 @@
+package com.bitcamp.java.board;
+
+/**
+ * 회원 정보를 다루는 기능들 구현한다...
+ * 저장소를 가지고 있다. User[]
+ * Create Retrieve Update Delete
+ * @author 비트캠프
+ *
+ */
+public class UserService {
+	private User[] list;
+	private int useq;
+	
+	public UserService() {
+		list = new User[5];
+		useq = 0;
+	}
+
+	public boolean login(String id, String pw) {
+		boolean result = false;
+		// 배열, 리스트 여러개가 저장된 구조의 반복
+		for(User user : list) {
+			if( user != null ) {
+				if( user.id.equals(id) && user.pw.equals(pw)) {
+					result = true;
+					break;
+				}
+			}
+		}
+		return result;		
+	}
+
+	public void logout() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void join(User user) {
+		// TODO Auto-generated method stub
+		if( list != null && user != null && useq < list.length)
+		{
+			list[useq] = user;
+			++useq;
+		}
+	}
+
+}
