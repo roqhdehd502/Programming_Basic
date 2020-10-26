@@ -35,7 +35,6 @@ public class BoardMain { // 게시판 구현 메인 클래스
 	public static void main(String[] args) {	
 		board = new Content[BOARDMAX];
 		users = new User[USERMAX];
-		
 		kb = new Scanner(System.in); // Scanner 클래스를 이용해 생성자 사용. 키보드의 입력 값을 처리하는 라이브러리 사용
 		
 		System.out.println("어플리케이션이 시작되었습니다.");
@@ -182,7 +181,6 @@ public class BoardMain { // 게시판 구현 메인 클래스
 	}
 
 	private static void list() { // 게시글 목록, 출력, 번호, 계획, 작성자
-		// 이중에 몬가... 아닌게 있다.
 		if(bseq == 0) {
 			System.out.println("등록된 글이 없습니다.");
 			return;
