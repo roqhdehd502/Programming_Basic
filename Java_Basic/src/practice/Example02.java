@@ -8,7 +8,7 @@ package practice;
 
 public class Example02 {
 	public static void main(String[] args) {
-		for (int i=1; i<=10; i+=2) {
+		for (int i=1; i<=10; i+=2) { // i를 1부터 2씩 증가하여 홀수로 출력한다. 
 			System.out.println(i);
 		}
 	}

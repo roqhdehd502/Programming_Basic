@@ -10,11 +10,11 @@ package practice;
 
 public class Example06 {
 	public static void main(String[] args) {
-		double sum = 0;
-		double i = 1;
+		double sum = 0; // 실수 데이터 타입인 double로 선언 및 초기화 한다.
+		double i = 1; // 연산하기 위해 실수 데이터 타입으로 선언 및 초기화 한다.(초기값 1로 설정)
 		
-		while (i<10000) {
-			sum += (i/(i+1));
+		while (i<10000) { // i가 10000이 되면 루프문 탈출
+			sum += (i/(i+1)); // n/(n+1)로 이루어지는 규칙을 이용하여 등차급수한다.
 			i++;
 		}
 		System.out.println("답: " + sum);

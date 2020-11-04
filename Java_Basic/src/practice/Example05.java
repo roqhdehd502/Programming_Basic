@@ -9,8 +9,8 @@ package practice;
 public class Example05 {
 	public static void main(String[] args) {
 		int four = 0;
-		for (int i = 4; i <= 50; i+=4) {
-			four = i;
+		for (int i = 4; i <= 50; i+=4) { // i를 4부터 4씩 증가하여 4의 배수로 반복한다.
+			four = i; // 4씩 증가하는 i값을 four 변수에 담는다.
 			System.out.println(four);
 		}
 	}
