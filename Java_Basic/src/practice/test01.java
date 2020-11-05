@@ -53,16 +53,16 @@ public class test01 {
 				// 새로운 배열의 첫번째 요소를 출력
 				break;
 			}
+			
 			if(a[i]-a[i-1] == 1) { // 배열요소 중 양의 정수 간 연속적인 값만 나올때
 				b.add(a[i]-a[i-1]); // 해당 값을 새로운 배열에 할당.
 				System.out.println("연속이며 네가 찾는 값은 " + b.get(b.size()-1) + 1); 
 				// 마지막 동적 배열 값의 1을 더해 출력.
 				break;
 			}
+
 			if(a[a.length-1] == 0 || a[a.length-1] < 0) { // 배열요소 마지막값이 0 또는 음수일때
-				b.add(1); // 1을 새로운 배열에 할당.
-				System.out.println("최대값이 음수이며 변환된 값은 " + b.get(0)); 
-				// 새로운 배열의 첫번째 요소를 출력
+				System.out.println("최대값이 음수이며 변환된 값은 1"); // 1을 출력
 				break;
 			}
 		}
