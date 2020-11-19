@@ -1,7 +1,7 @@
 package practiceTwo;
 
 public class Circle {
-	public double x1, x2, y1, y2, rad1, rad2;
+	private double x1, x2, y1, y2, rad1, rad2;
 
 	public void getPosition(double x1, double x2, double y1, double y2, double rad1, double rad2) {
 		this.x1 = x1;
