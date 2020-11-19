@@ -3,8 +3,8 @@ package practiceTwo;
 import java.util.Scanner;
 
 /*
- * 크기가 다른 두 원을 대조합니다.
- * 원이 겹쳐있으면 중첩, 원이 떨어져있으면 만나지않는다라고 표기
+ * 위치와 크기가 서로 다른 두 원을 대조합니다.
+ * '원이 만나거나 겹치면 중첩, 그 외엔 만나지않는다' 라고 표기
  */
 
 public class CircleMain {
@@ -26,20 +26,9 @@ public class CircleMain {
 		System.out.println("원 2의 반지름을 기입하세요.");
 		double rad2 = scanner.nextDouble();
 		
-		double dis = circle.distance(x1, x2, y1, y2);
-		
-		if ((rad2-rad1 < dis) && (rad1+rad2 > dis)) { // 판별식
-			System.out.println("두 원은 두 점에서 만납니다.(중첩)");
-		} else if ((rad1 + rad2 == dis) || (rad2-rad1 == dis)) {
-			System.out.println("두 원은 한 점에서 만납니다.(중첩)");
-		} else if ((rad2 - rad1 > dis) || (dis == 0)) {
-			System.out.println("두 원은 어떠한 점에서도 만나지 않지만 포함관계입니다.(중첩)");
-		} else {
-			System.out.println("두 원은 만나지 않습니다.");
-		}
+		circle.setLocation(x1, x2, y1, y2);
+		circle.setRad(rad1, rad2);
 		
 		scanner.close();
 	}
-
-	
 }
