@@ -26,8 +26,8 @@ public class CircleMain {
 		System.out.println("원 2의 반지름을 기입하세요.");
 		double rad2 = scanner.nextDouble();
 		
-		circle.setLocation(x1, x2, y1, y2);
-		circle.setRad(rad1, rad2);
+		circle.getPosition(x1, x2, y1, y2, rad1, rad2);
+		circle.setCir();
 		
 		scanner.close();
 	}
