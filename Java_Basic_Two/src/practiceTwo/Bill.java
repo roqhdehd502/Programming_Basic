@@ -2,70 +2,32 @@ package practiceTwo;
 
 public class Bill {
 	private int money;
-	private int oman = 0;
-	private int man = 0;
-	private int ochun = 0;
-	private int chun = 0;
-	private int coin = 0;
 	
 	public Bill(int money) {
 		this.money = money;
 	}
 	
-	private void getOman() {
-		for (int i = 50000; i > money; i+=50000) {
-			if ((money % i) > 50000) {
-				oman++;
-			}
-		}
-	}
-	
-	private void getMan() {
-		getOman();
-		
-		for (int j = 10000; j > money; j+=10000) {
-			if ((money % j) > 10000) {
-				man++;
-			}
-		}
-	}
-	
-	private void getOchun() {
-		getMan();
-		
-		for (int k = 5000; k > money; k+=5000) {
-			if ((money % k) > 5000) {
-				ochun++;
-			}
-		}
-	}
-	
-	private void getChun() {
-		getOchun();
-		
-		for (int l = 1000; l > money; l+=1000) {
-			if ((money % l) > 1000) {
-				chun++;
-			} else {
-				coin = money;
-			}
-		}
-	}
-	
 	private void getExchange() {
-		getOman();
-		getMan();
-		getOchun();
-		getChun();
+		int oman = 0;
+		int man = 0;
+		int ochun = 0;
+		int chun = 0;
+		int etc = 0;
+		
+		oman = money / 50000;
+		man = money % 50000 / 10000;
+		ochun = money % 50000 % 10000 / 5000;
+		chun = money % 50000 % 10000 % 5000 / 1000;
+		etc = money % 50000 % 10000 % 5000 % 1000;
 		
 		System.out.println();
 		System.out.println("환전결과는 다음과 같습니다.");
 		System.out.println("-------------------");
-		System.out.println("5만원 권: " + oman + "장");
-		System.out.println("1만원 권: " + man + "장");
-		System.out.println("5천원 권: " + ochun + "장");
-		System.out.println("1천원 권: " + chun + "장");
-		System.out.println("잔돈: " + coin + "원");
+		System.out.println("오만원 : " + oman + "장");
+		System.out.println("일만원 : " + man + "장");
+		System.out.println("오천원 : " + ochun + "장");
+	    System.out.println("일천원 : " + chun + "장");
+	    System.out.println("잔 돈 : " + etc + "원");
 	}
 	
 	public void setExchange() {

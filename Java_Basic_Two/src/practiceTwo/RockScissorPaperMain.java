@@ -2,18 +2,19 @@ package practiceTwo;
 
 import java.util.Scanner;
 
-public class BillMain {
-	static private int money;
-	
+public class RockScissorPaperMain {
+	public static String what;
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
 		while (true) {
-			System.out.println("지폐의 액수를 입력해주세요.");
-			money = scanner.nextInt();
+			System.out.println("가위바위보 중 하나를 내세요.");
+			System.out.println("ex) 가위");
+			what = scanner.next();
 			
-			Bill bill = new Bill(money);
-			bill.setExchange();
+			RockScissorPaper rsp = new RockScissorPaper(what);
+			rsp.setResult();
 			
 			System.out.println("다시 시작 하시겠습니까? [Y/N]");
 			char restart = scanner.next().charAt(0);
